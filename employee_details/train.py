@@ -46,11 +46,11 @@ y_train_pred_df = pd.DataFrame(y_train_pred, columns=y_train.columns)
 y_test_pred_df = pd.DataFrame(y_test_pred, columns=y_test.columns)
 
 # Evaluate on test
-print("\n📊Evaluation on test set:")
+print("\nEvaluation on test set:")
 for col in y_test.columns:
     rmse = np.sqrt(mean_squared_error(y_test[col], y_test_pred_df[col]))
     r2 = r2_score(y_test[col], y_test_pred_df[col])
-    print(f"👉 {col}: RMSE = {rmse:.2f}, R2 = {r2:.2f}")
+    print(f" {col}: RMSE = {rmse:.2f}, R2 = {r2:.2f}")
 
 # Save model and predictions
 pred_dir = os.path.join(base_path, "predictions")
